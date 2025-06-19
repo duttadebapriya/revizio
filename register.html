@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Revizio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <div class="logo">
+    <img src="assets/logo.png" alt="Revizio Logo" class="top-logo" />
+  </div>
+  <body>
+    <div class="card">
+      <h2>Register</h2>
+      <input type="text" id="reg-username" placeholder="Username" required />
+      <input
+        type="email"
+        id="reg-email"
+        placeholder="Enter your mail"
+        required
+      />
+      <input
+        type="password"
+        id="reg-password"
+        placeholder="Create a password"
+        required
+      />
+      <button onclick="registerUser()" class="signUp">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>

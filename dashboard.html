@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Revizio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- 📦 Main Dashboard Container -->
+    <div class="dashboard-container">
+      <!-- 🔹 Sidebar -->
+      <div class="sidebar">
+        <h2>Welcome, <span id="usernameDisplay"></span> 👋</h2>
+        <p>Keep your streak alive. Focus, revise, grow.</p>
+      
+        <hr />
+      
+        <h4>🛠️ Quick Actions</h4>
+        <ul class="quick-actions">
+          <li onclick="document.getElementById('topicInput').focus()">➕ Add Topic</li>
+          <li onclick="window.scrollTo(0, 0)">🔼 Scroll to Top</li>
+          <li onclick="logout()">🚪 Logout</li>
+        </ul>
+      
+        <div class="quote-box">
+          <p id="motivationalQuote">Loading inspiration...</p>
+        </div>
+      </div>
+      
+
+      <!-- 🔸 Main Content Area -->
+      <div class="main-content">
+        <!-- LEFT SECTION -->
+        <div class="card-container">
+          <div class="topic-form-card">
+            <h2>Add a topic you studied.</h2>
+            <input type="text" id="topicInput" placeholder="e.g., Binary Trees">
+            <button onclick="handleAddTopic()">Add Topic</button>
+            <button onclick="clearMyTopics()">🧹 Clear All Tasks</button>
+          </div>
+          <div id="topicList" class="topic-list-container"></div>
+        </div>
+      
+        <!-- RIGHT SECTION -->
+        <div class="right-panel">
+          <div class="analytics-section">
+            <h3>📈 Your Progress</h3>
+            <p class="chart-caption">Daily revision count based on topics you've completed ✅</p>
+            <canvas id="progressChart" height="200"></canvas>
+          </div>          
+          <div class="reminder-section">
+            <h3>🔔 Today's Revisions</h3>
+            <ul id="todayList"></ul>
+            <p id="noRevisionsMsg">No revisions today!</p>
+          </div>
+        </div>
+      </div>
+      
+
+    <!-- 🔑 Script -->
+    <script src="js/dashboard.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("revizio-current-user");
+        window.location.href = "index.html";
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

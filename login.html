@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Revizio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Revizio Logo" class="top-logo" />
+    </div>
+    <div class="card">
+      <h2>Login</h2>
+      <input
+        type="text"
+        id="login-username"
+        placeholder="Enter your username"
+        required
+      />
+      <input
+        type="password"
+        id="login-password"
+        placeholder="Enter your password"
+        required
+      />
+      <button onclick="loginUser()" class="loginBtn">Login</button>
+      <p>New here? <a href="register.html">Register</a></p>
+      <p>Just exploring? <button onclick="loginAsGuest()">Use Demo</button></p>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>
