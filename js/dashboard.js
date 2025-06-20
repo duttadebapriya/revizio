@@ -87,6 +87,13 @@ function renderTopics() {
       (date) => !topic.completed.includes(date)
     );
 
+    const revBadges = topic.revisionDates
+      .map((date) => {
+        const isDone = topic.completed.includes(date);
+        return `<span class="rev-badge ${isDone ? "done" : ""}">${date}</span>`;
+      })
+      .join("");
+
     const card = document.createElement("div");
     card.className = "topic-card";
     card.innerHTML = `
@@ -96,16 +103,17 @@ function renderTopics() {
     }</h3>
         <button onclick="deleteTopic(${index})" class="delete-btn">🗑️</button>
       </div>
+      <p>🗓 Revisions: ${revBadges}</p>
       ${
         nextRev
-          ? `<p>🗓 Next Revision: <span class="badge">${nextRev}</span></p>
-             <button id="markDone" onclick="markAsDone(${index}, '${nextRev}')">Mark as Done ✅</button>`
+          ? `<button onclick="markAsDone(${index}, '${nextRev}')">Mark as Done ✅</button>`
           : `<p>✅ All Revisions Done!</p>`
       }
     `;
     topicList.appendChild(card);
   });
 }
+
 
 // 🗑️ Delete Topic
 function deleteTopic(index) {
@@ -203,11 +211,6 @@ function updateStreak() {
     count: 0,
   };
 
-  if (streakData.lastDate === today) {
-    document.getElementById("streakCount").innerText = streakData.count;
-    return;
-  }
-
   const yesterday = formatDate(addDays(new Date(), -1));
   const didReviseToday = (users[currentUser].topics || []).some((topic) =>
     topic.completed.includes(today)
@@ -217,9 +220,13 @@ function updateStreak() {
     streakData.count =
       streakData.lastDate === yesterday ? streakData.count + 1 : 1;
     streakData.lastDate = today;
-    localStorage.setItem(streakKey, JSON.stringify(streakData));
+  } else if (streakData.lastDate !== today) {
+    // Missed today or no data yet → reset streak
+    streakData.count = 0;
+    streakData.lastDate = today;
   }
 
+  localStorage.setItem(streakKey, JSON.stringify(streakData));
   document.getElementById("streakCount").innerText = streakData.count;
 }
 

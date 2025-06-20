@@ -134,6 +134,26 @@ button:hover {
   background-color: #486ad1;
 }
 
+/* for streak */
+#streakBanner {
+  background-color: #fef3c7;
+  color: #b45309;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  border-bottom: 2px solid #fcd34d;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
+  width: fit-content;
+}
+
+
 .topic-form-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -187,6 +207,25 @@ button:hover {
   overflow-y: auto;
   margin: 0 auto; /* horizontally center */
 }
+
+/* for the revision dates */
+.rev-badge {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 4px 10px;
+  margin: 4px 6px 0 0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.rev-badge.done {
+  background-color: #c6f6d5;
+  color: #276749;
+  text-decoration: line-through;
+}
+
 
 /* left sidebar */
 .sidebar {
