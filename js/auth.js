@@ -38,3 +38,9 @@ function loginUser() {
   window.location.href = "dashboard.html";
 }
 
+function loginAsGuest() {
+  // Set guest as the current user
+  localStorage.setItem("revizio-current-user", "guest");
+  alert("Logged in as guest!");
+  window.location.href = "dashboard.html";
+}
