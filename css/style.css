@@ -472,16 +472,4 @@ button:active {
   border-radius: 6px;
 }
 
-/* view count */
-.visit-banner {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  z-index: 100;
-}
+
