@@ -39,7 +39,16 @@ function loginUser() {
 }
 
 function loginAsGuest() {
-  // Set guest as the current user
+  let users = JSON.parse(localStorage.getItem("revizio-users")) || {};
+
+  if (!users["guest"]) {
+    password: "demo";
+    users["guest"] = {
+      topics: [],
+    };
+    localStorage.setItem("revizio-users", JSON.stringify(users));
+  }
+
   localStorage.setItem("revizio-current-user", "guest");
   alert("Logged in as guest!");
   window.location.href = "dashboard.html";

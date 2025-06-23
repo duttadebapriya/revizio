@@ -16,8 +16,8 @@
     <header>
       <a href="index.html">
         <div class="logo">
-        <img src="assets/logo.png" alt="Revizio Logo" class="top-logo" />
-      </div>
+          <img src="assets/logo.png" alt="Revizio Logo" class="top-logo" />
+        </div>
       </a>
     </header>
     <div class="glass-card">
@@ -26,5 +26,18 @@
       <button onclick="location.href='login.html'">Login</button>
       <button onclick="location.href='register.html'">Register</button>
     </div>
+    <div class="visit-banner">
+      👀 Total Visits: <span id="visitCount">Loading...</span>
+    </div>
+    
+    <footer>
+      <script>
+        fetch("https://api.countapi.xyz/hit/duttadebapriya.github.io/revizio//visits")
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById("visitCount").innerText = data.value;
+          });
+      </script>
+    </footer>
   </body>
 </html>

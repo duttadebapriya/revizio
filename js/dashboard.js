@@ -15,6 +15,7 @@ if (!currentUser) window.location.href = "login.html";
 const storedUsers = JSON.parse(localStorage.getItem("revizio-users")) || {};
 if (!storedUsers[currentUser]) window.location.href = "login.html";
 
+
 // 👋 Personalized Greeting
 const quotes = [
   "Revision is the heartbeat of retention.",
@@ -113,7 +114,6 @@ function renderTopics() {
     topicList.appendChild(card);
   });
 }
-
 
 // 🗑️ Delete Topic
 function deleteTopic(index) {
