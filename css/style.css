@@ -24,7 +24,6 @@ body {
   overflow-x: hidden;
 }
 
-
 /* for index.html */
 .glass-card {
   margin: 130px;
@@ -33,7 +32,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 50vh;      /* stretch full page height */
+  min-height: 50vh; /* stretch full page height */
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -78,7 +77,7 @@ button {
 button:hover {
   background: rgba(255, 255, 255, 0.4);
 }
- /* for logo */
+/* for logo */
 .logo {
   position: absolute;
   top: 20px;
@@ -153,7 +152,6 @@ button:hover {
   width: fit-content;
 }
 
-
 .topic-form-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -225,7 +223,6 @@ button:hover {
   color: #276749;
   text-decoration: line-through;
 }
-
 
 /* left sidebar */
 .sidebar {
@@ -434,14 +431,12 @@ button:active {
   margin-top: 20px;
 }
 
-
 /* analytics progress */
 .chart-caption {
   font-size: 0.85rem;
   color: #cccccc;
   margin-bottom: 10px;
 }
-
 
 /* for sidebar */
 .sidebar-logo {
@@ -469,14 +464,13 @@ button:active {
 
 .quote-box {
   margin-top: 30px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   padding: 12px;
   border-left: 4px solid #5e81f4;
   font-style: italic;
   color: #ccc;
   border-radius: 6px;
 }
-
 
 /* view count */
 .visit-banner {
@@ -491,5 +485,3 @@ button:active {
   font-weight: bold;
   z-index: 100;
 }
-
-

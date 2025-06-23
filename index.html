@@ -29,15 +29,19 @@
     <div class="visit-banner">
       👀 Total Visits: <span id="visitCount">Loading...</span>
     </div>
-    
-    <footer>
-      <script>
-        fetch("https://api.countapi.xyz/hit/duttadebapriya.github.io/revizio//visits")
-          .then((res) => res.json())
-          .then((data) => {
-            document.getElementById("visitCount").innerText = data.value;
-          });
-      </script>
-    </footer>
+
+    <script>
+      fetch(
+        "https://api.countapi.xyz/hit/duttadebapriya.github.io/revizio//visits"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById("visitCount").innerText = data.value;
+        })
+        .catch((err) => {
+          console.error("Error fetching count:", err);
+          counterEl.innerText = "👀 Total Visits: N/A";
+        });
+    </script>
   </body>
 </html>
