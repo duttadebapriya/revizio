@@ -4,12 +4,191 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Revizio - Smart Revision App</title>
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+
+      .logo {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .top-logo {
+        width: 60px;
+        height: auto;
+        cursor: pointer;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .top-logo:hover {
+        transform: scale(1.1);
+      }
+
+      .main-container {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 60px 40px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .landing-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(45deg, #5e81f4, #50fa7b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .glass-card p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      button {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 12px;
+        padding: 15px 30px;
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        min-width: 120px;
+      }
+
+      button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      /*mobile responsiveness */
+      @media (max-width: 768px) {
+        header {
+          top: 15px;
+          left: 15px;
+        }
+        .top-logo {
+          width: 50px;
+        }
+        .glass-card {
+          padding: 40px 30px;
+          margin: 20px;
+        }
+        .landing-title {
+          font-size: 2rem;
+        }
+        .glass-card p {
+          font-size: 1.1rem;
+          margin-bottom: 30px;
+        }
+        .button-group {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+        button {
+          width: 100%;
+          max-width: 200px;
+          padding: 12px 25px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .glass-card {
+          padding: 30px 20px;
+          margin: 15px;
+        }
+        .landing-title {
+          font-size: 1.8rem;
+        }
+        .glass-card p {
+          font-size: 1rem;
+        }
+        button {
+          padding: 12px 20px;
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Loading Animation */
+      .fade-in {
+        animation: fadeIn 0.8s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Logo in top-right -->
@@ -20,11 +199,15 @@
         </div>
       </a>
     </header>
-    <div class="glass-card">
-      <h1 class="landing-title">Welcome to Revizio!</h1>
-      <p>Smart Revision, Better Retention!</p>
-      <button onclick="location.href='login.html'">Login</button>
-      <button onclick="location.href='register.html'">Register</button>
+    <div class="main-container">
+      <div class="glass-card fade-in">
+        <h1 class="landing-title">Welcome to Revizio!</h1>
+        <p>Smart Revision, Better Retention!</p>
+        <div class="button-group">
+          <button onclick="location.href='login.html'">Login</button>
+          <button onclick="location.href='register.html'">Register</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
